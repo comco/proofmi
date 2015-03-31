@@ -1,0 +1,5 @@
+package proofmi
+
+class SubstitutionStrategy {
+
+}
