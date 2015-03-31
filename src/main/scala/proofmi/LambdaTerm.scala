@@ -72,7 +72,7 @@ sealed trait LambdaTerm {
       else if (b.freeNames.contains(x) && t.freeNames.contains(y)) {
         val y1 = y.fresh()
         LambdaAbstraction(y1, b.unsafeSubstitute(y, LambdaVariable(y1)).captureAvoidingSubstitute(x, t))
-      } else LambdaAbstraction(y, b.unsafeSubstitute(x, t))
+      } else LambdaAbstraction(y, b.captureAvoidingSubstitute(x, t))
   }
   
   /**
